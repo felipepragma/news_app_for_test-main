@@ -24,54 +24,44 @@ class HttpClientMock implements http.Client {
 
   @override
   Future<http.Response> delete(Uri url, {Map<String, String>? headers, Object? body, Encoding? encoding}) {
-    // TODO: implement delete
     throw UnimplementedError();
   }
 
   @override
   Future<http.Response> head(Uri url, {Map<String, String>? headers}) {
-    // TODO: implement head
     throw UnimplementedError();
   }
 
   @override
   Future<http.Response> patch(Uri url, {Map<String, String>? headers, Object? body, Encoding? encoding}) {
-    // TODO: implement patch
     throw UnimplementedError();
   }
 
   @override
   Future<http.Response> post(Uri url, {Map<String, String>? headers, Object? body, Encoding? encoding}) {
-    // TODO: implement post
     throw UnimplementedError();
   }
 
   @override
   Future<http.Response> put(Uri url, {Map<String, String>? headers, Object? body, Encoding? encoding}) {
-    // TODO: implement put
     throw UnimplementedError();
   }
 
   @override
   Future<String> read(Uri url, {Map<String, String>? headers}) {
-    // TODO: implement read
     throw UnimplementedError();
   }
 
   @override
   Future<Uint8List> readBytes(Uri url, {Map<String, String>? headers}) {
-    // TODO: implement readBytes
     throw UnimplementedError();
   }
 
   @override
   Future<http.StreamedResponse> send(http.BaseRequest request) {
-    // TODO: implement send
     throw UnimplementedError();
   }
 
   @override
-  void close() {
-    // TODO: implement close
-  }
+  void close() { }
 }
