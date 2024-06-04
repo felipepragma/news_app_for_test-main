@@ -1,0 +1,19 @@
+{
+   "status":"ok",
+   "totalResults":37,
+   "articles":[
+      {
+         "source":{
+            "id":"associated-press",
+            "name":"Associated Press"
+         },
+         "author":null,
+         "title":"Mexico election 2024: Live updates, results, what to know - The Associated Press",
+         "description":"Voting in Mexico's 2024 presidential election is underway and, for the first time in the country's history, the two leading candidates",
+         "url":"https://apnews.com/live/mexico-election-results-updates",
+         "urlToImage":"https://dims.apnews.com/dims4/default/8c8fd0c/2147483647/strip/true/crop/8055x4531+0+0/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fe9%2Fe7%2F1fff08bb4ad8a017fcddd4e8146b%2Fap24154548553643.jpg",
+         "publishedAt":"2024-06-02T19:17:00Z",
+         "content":"A woman holds up a sign with a message that reads in Spanish; I will decide as she joins a march demanding legal, free and safe abortions for all women, marking International Safe"
+      }
+   ]
+}

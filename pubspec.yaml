@@ -1,0 +1,28 @@
+name: news_app_for_test
+description: A new Flutter project.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.6 <4.0.0"
+
+dependencies:
+  cupertino_icons: ^1.0.2
+  flutter:
+    sdk: flutter
+  http: ^1.2.1
+  provider: ^6.1.2
+  shared_preferences: ^2.2.3
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+  provider_test: ^2.0.2
+  integration_test:
+    sdk: flutter
+  network_image_mock: ^2.0.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/mocks/data.json
