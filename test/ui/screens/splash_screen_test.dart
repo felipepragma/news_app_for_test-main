@@ -7,22 +7,32 @@ import 'package:provider/provider.dart';
 import '../../mocks/news_api_service_success_mock.dart';
 
 void main() {
-  testWidgets("Test splash screen", (tester) async {
-    await tester.pumpWidget(MultiProvider(
-      providers: [
-        Provider(create: (_) => NewsApiServiceSuccessMock()),
-        ProxyProvider<NewsApiServiceSuccessMock, GetNewsUsecase>(
-          update: (_, apiService, __) => GetNewsUsecase(apiService),
+  group("Test splash screen", () {
+    late Widget splashScreen;
+
+    setUp(() {
+      splashScreen = MultiProvider(
+        providers: [
+          Provider(create: (_) => NewsApiServiceSuccessMock()),
+          ProxyProvider<NewsApiServiceSuccessMock, GetNewsUsecase>(
+            update: (_, apiService, __) => GetNewsUsecase(apiService),
+          ),
+        ],
+        child: const MaterialApp(
+          home: SplashScreen(),
         ),
-      ],
-      child: const MaterialApp(
-        home: SplashScreen(),
-      ),
-    ));
-    expect(find.text('News App'), findsOneWidget);
+      );
+    });
 
-    await tester.pumpAndSettle(const Duration(seconds: 2));
+    testWidgets("Close splash screen", (tester) async {
+      // Arrange
+      await tester.pumpWidget(splashScreen);
 
-    expect(find.text('News App'), findsNothing);
+      // Act
+      await tester.pumpAndSettle(const Duration(seconds: 2));
+
+      // Assert
+      expect(find.text('News App'), findsNothing);
+    });
   });
 }

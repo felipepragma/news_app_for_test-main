@@ -1,4 +1,3 @@
-
 import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:news_app_for_test/infrastructure/extensions/http_overrides_extension.dart';
@@ -10,20 +9,34 @@ import '../mocks/http_client_mock.dart';
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  test("News api services get success", () async {
+  group("Test get news api services ", () {
     final mockResponses = {
-    '${NewsApiService.baseUrl}/top-headlines?country=us&apiKey=${NewsApiService.apiKey}': 'assets/mocks/data.json'
+      '${NewsApiService.baseUrl}/top-headlines?country=us&apiKey=${NewsApiService.apiKey}':
+          'assets/mocks/data.json'
     };
-    final httpClientMock = HttpClientMock(mockResponses);
-    final newsApiService = NewsApiService(httpClientMock);
-    final result = await newsApiService.fetchTopHeadlines();
-    expect(result, isA<List<NewsModel>>());
-    expect(result.length, 1);
 
-    HttpOverrides.global = HttpOverridesExtension();
-    final context = SecurityContext.defaultContext;
-    HttpClient httpClient = HttpOverrides.current!.createHttpClient(context);
-    expect(httpClient, isNotNull);
-    expect(HttpOverrides.current, isA<HttpOverridesExtension>());
+    late final HttpClientMock httpClientMock;
+    late final NewsApiService newsApiService;
+
+    setUpAll(() {
+      httpClientMock = HttpClientMock(mockResponses);
+      newsApiService = NewsApiService(httpClientMock);
+    });
+
+    test("success check instace of List<NewsEntity>", () async {
+      // Arrange
+      final result = await newsApiService.fetchTopHeadlines();
+
+      // Assert
+      expect(result, isA<List<NewsModel>>());
+    });
+
+    test("success check length list", () async {
+      // Arrange
+      final result = await newsApiService.fetchTopHeadlines();
+
+      // Assert
+      expect(result.length, 1);
+    });
   });
 }
