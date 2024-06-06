@@ -1,6 +1,4 @@
-import 'dart:io';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:news_app_for_test/infrastructure/extensions/http_overrides_extension.dart';
 import 'package:news_app_for_test/infrastructure/models/news_model.dart';
 import 'package:news_app_for_test/infrastructure/service/news_api_service.dart';
 
